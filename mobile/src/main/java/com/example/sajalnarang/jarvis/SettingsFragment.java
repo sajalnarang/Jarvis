@@ -34,7 +34,7 @@ public class SettingsFragment extends PreferenceFragment {
         addPreferencesFromResource(R.xml.app_preferences);
 
 
-        ((MainActivity) getActivity()).changeTitle("Settings");
+        ((MainActivity) getActivity()).setActionBarTitle("Settings");
 
 
         findPreference("ip_address").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {

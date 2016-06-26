@@ -23,7 +23,7 @@ public class RemoteFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ((MainActivity) getActivity()).changeTitle("Jarvis");
+        ((MainActivity) getActivity()).setActionBarTitle("Jarvis");
     }
 
     @Override

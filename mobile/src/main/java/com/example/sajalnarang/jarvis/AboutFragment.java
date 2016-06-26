@@ -23,7 +23,7 @@ public class AboutFragment extends PreferenceFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ((MainActivity) getActivity()).changeTitle("About Us");
+        ((MainActivity) getActivity()).setActionBarTitle("About Us");
     }
 
     @Override

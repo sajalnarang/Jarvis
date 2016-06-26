@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
-    public void changeTitle(String title) {
+    public void setActionBarTitle(String title) {
         setTitle(title);
     }
 
