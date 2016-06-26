@@ -19,6 +19,12 @@ public class AboutFragment extends PreferenceFragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ((MainActivity) getActivity()).changeTitle("About Us");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

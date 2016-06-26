@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    public void changeTitle(String title) {
+        setTitle(title);
+    }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_speak) {
             return true;
         }
 
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity
             SettingsFragment settingsFragment = new SettingsFragment();
             FragmentManager manager = getFragmentManager();
             FragmentTransaction transaction = manager.beginTransaction();
-            transaction.add(android.R.id.content, settingsFragment, settingsFragment.getTag());
+            transaction.add(R.id.linearlayout_for_fragment, settingsFragment, settingsFragment.getTag());
             transaction.commit();
         } else if (id == R.id.nav_share) {
 
@@ -96,5 +100,4 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 }

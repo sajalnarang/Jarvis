@@ -19,6 +19,12 @@ public class RemoteFragment extends PreferenceFragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        ((MainActivity) getActivity()).changeTitle("Jarvis");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
