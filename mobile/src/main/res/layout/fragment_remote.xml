@@ -4,17 +4,14 @@
     android:layout_height="match_parent"
     tools:context="com.example.sajalnarang.jarvis.RemoteFragment">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/list"
+            <ListView
+                android:id="@+id/remote_list"
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
                 android:paddingTop="8dp" />
@@ -23,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="Fan Speed"
+                android:text="@string/fan_speed"
                 android:textColor="#000000"
                 android:textSize="32sp" />
 
@@ -52,6 +49,5 @@
 
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
 
 </FrameLayout>

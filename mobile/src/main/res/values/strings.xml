@@ -71,4 +71,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="speak_button">Speak Button</string>
+    <string name="fan_speed">Fan Speed</string>
 </resources>

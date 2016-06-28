@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        RemoteFragment remoteFragment = new RemoteFragment();
+        FragmentManager manager = getFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.linearlayout_for_fragment, remoteFragment, remoteFragment.getTag());
+        transaction.commit();
     }
 
     public void setActionBarTitle(String title) {
@@ -77,12 +83,16 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_remote) {
             RemoteFragment remoteFragment = new RemoteFragment();
             FragmentManager manager = getFragmentManager();
-            manager.beginTransaction().replace(R.id.linearlayout_for_fragment, remoteFragment, remoteFragment.getTag()).commit();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.add(R.id.linearlayout_for_fragment, remoteFragment, remoteFragment.getTag());
+            transaction.commit();
 
         } else if (id == R.id.nav_about) {
             AboutFragment aboutFragment = new AboutFragment();
             FragmentManager manager = getFragmentManager();
-            manager.beginTransaction().replace(R.id.linearlayout_for_fragment, aboutFragment, aboutFragment.getTag()).commit();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.add(R.id.linearlayout_for_fragment, aboutFragment, aboutFragment.getTag());
+            transaction.commit();
 
         } else if (id == R.id.nav_manage) {
             SettingsFragment settingsFragment = new SettingsFragment();

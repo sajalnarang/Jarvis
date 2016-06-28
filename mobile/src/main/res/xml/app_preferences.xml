@@ -16,5 +16,4 @@
             android:title="Port" />
 
     </PreferenceCategory>
-
 </PreferenceScreen>
