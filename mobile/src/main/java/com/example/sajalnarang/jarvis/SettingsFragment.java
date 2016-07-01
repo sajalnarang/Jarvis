@@ -16,7 +16,9 @@ import java.util.regex.Pattern;
  */
 public class SettingsFragment extends PreferenceFragment {
 
-    private static final Pattern IP_ADDRESS
+    public static String IP_ADDRESS = "192.168.1.106";
+
+    private static final Pattern IP_ADDRESS_PATTERN
             = Pattern.compile(
             "((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9])\\.(25[0-5]|2[0-4]"
                     + "[0-9]|[0-1][0-9]{2}|[1-9][0-9]|[1-9]|0)\\.(25[0-5]|2[0-4][0-9]|[0-1]"
@@ -42,26 +44,12 @@ public class SettingsFragment extends PreferenceFragment {
             public boolean onPreferenceChange(Preference preference, Object o) {
                 String stringValue = o.toString();
 
-                Matcher matcher = IP_ADDRESS.matcher(stringValue);
+                Matcher matcher = IP_ADDRESS_PATTERN.matcher(stringValue);
                 if (matcher.matches()) {
-                    Constants.IP_ADDRESS = stringValue;
+                    IP_ADDRESS = stringValue;
                     preference.setSummary(stringValue);
                 } else
                     Toast.makeText(SettingsFragment.this.getActivity(), "Invalid IP Address", Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });
-
-        findPreference("port").setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-            @Override
-            public boolean onPreferenceChange(Preference preference, Object o) {
-                String stringValue = o.toString();
-
-                if (Integer.parseInt(stringValue) < 10000) {
-                    Constants.PORT = stringValue;
-                    preference.setSummary(stringValue);
-                } else
-                    Toast.makeText(SettingsFragment.this.getActivity(), "Invalid Port number", Toast.LENGTH_SHORT).show();
                 return true;
             }
         });

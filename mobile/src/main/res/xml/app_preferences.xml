@@ -8,12 +8,5 @@
             android:key="ip_address"
             android:title="IP Address" />
 
-        <EditTextPreference
-            android:defaultValue="0"
-            android:summary="0"
-            android:inputType="number"
-            android:key="port"
-            android:title="Port" />
-
     </PreferenceCategory>
 </PreferenceScreen>
